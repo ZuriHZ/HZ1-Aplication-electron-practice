@@ -1,0 +1,87 @@
+{
+    "name": "zuri",
+    "version": "1.0.0",
+    "main": "electron/main.js",
+    "scripts": {
+        "dev": "concurrently \"vite\" \"electron .\"",
+        "build": "vite build",
+        "start": "electron .",
+        "dist": "npm run build && electron-builder"
+    },
+    "author": "zurihz",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@babel/core": "^7.28.0",
+        "@babel/preset-env": "^7.28.0",
+        "@babel/preset-react": "^7.27.1",
+        "@tailwindcss/postcss": "^4.1.11",
+        "@types/node": "^22.16.2",
+        "@types/react": "^19.1.8",
+        "@types/react-dom": "^19.1.6",
+        "@vitejs/plugin-react": "^4.6.0",
+        "babel-loader": "^10.0.0",
+        "concurrently": "^9.2.0",
+        "css-loader": "^7.1.2",
+        "electron": "^33.4.11",
+        "electron-builder": "^26.0.12",
+        "postcss-loader": "^8.1.1",
+        "standard": "^17.1.2",
+        "style-loader": "^4.0.0",
+        "tw-animate-css": "^1.3.5",
+        "typescript": "^5.8.3",
+        "vite": "^6.3.5"
+    },
+    "dependencies": {
+        "@tabler/icons-react": "^3.34.0",
+        "@tailwindcss/vite": "^4.1.11",
+        "autoprefixer": "^10.4.21",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "framer-motion": "^12.23.1",
+        "lucide-react": "^0.511.0",
+        "motion": "^12.23.1",
+        "postcss": "^8.5.6",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "react-icons": "^5.5.0",
+        "react-router-dom": "^7.6.3",
+        "shadcn-ui": "^0.9.5",
+        "tailwind-merge": "^3.3.1",
+        "tailwindcss": "^4.1.11"
+    },
+    "build": {
+        "appId": "com.tuempresa.tuapp",
+        "productName": "ZuriHZ",
+        "icon": "public/assets/MiLogoHZ.png",
+        "iconDark": "public/assets/MiLogoHZ.png",
+        "iconLight": "public/assets/MiLogoHZ.png",
+        "directories": {
+            "buildResources": "public/assets",
+
+            "output": "release"
+        },
+        "files": [
+            "dist/**/*",
+            "electron/**/*",
+            "package.json"
+        ],
+        "extraMetadata": {
+            "main": "electron/main.js"
+
+        },
+        "win": {
+            "target": "nsis",
+            "icon": "public/assets/MiLogoHZ.png",
+            "iconDark": "public/assets/MiLogoHZ.png",
+            "iconLight": "public/assets/MiLogoHZ.png"
+        },
+        "mac": {
+            "target": "dmg"
+
+        },
+        "linux": {
+            "target": "AppImage"
+        }
+    }
+}
